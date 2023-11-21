@@ -8,8 +8,19 @@
   .title {
     width: 100%;
     margin-bottom: 40px;
-    font-family: Designer;
     text-transform: uppercase;
     font-size: 42px;
+
+    .text-wrapper {
+      .text-overflow {
+        span {
+          font-family: Designer;
+
+          &.space {
+            width: 10.5px;
+          }
+        }
+      }
+    }
   }
 }

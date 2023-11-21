@@ -1,6 +1,7 @@
 import React from "react";
 import "./JoueurList.scss";
 import JoueurCard from "../joueur-card/JoueurCard";
+import TextWrapper from "../text-wrapper/TextWrapper";
 
 export const props = {
   stats: [
@@ -32,7 +33,9 @@ export const props = {
 export default function JoueurList({ stats }) {
   return (
     <div className="joueur-list">
-      <div className="title">Classement individuel des meilleurs joueurs</div>
+      <div className="title">
+        <TextWrapper text="Classement individuel des meilleurs joueurs" />
+      </div>
       {stats.map((stat) => (
         <JoueurCard stat={stat} key={stat.classement} />
       ))}
