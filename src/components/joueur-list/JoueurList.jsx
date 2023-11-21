@@ -2,6 +2,7 @@ import React from "react";
 import "./JoueurList.scss";
 import JoueurCard from "../joueur-card/JoueurCard";
 import TextWrapper from "../text-wrapper/TextWrapper";
+import { motion } from "framer-motion";
 
 export const props = {
   stats: [
@@ -31,14 +32,44 @@ export const props = {
  * @returns
  */
 export default function JoueurList({ stats }) {
+  const listVariants = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 1.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
-    <div className="joueur-list">
+    <motion.div
+      variants={listVariants}
+      initial="initial"
+      animate="animate"
+      className="joueur-list"
+    >
       <div className="title">
         <TextWrapper text="Classement individuel des meilleurs joueurs" />
       </div>
       {stats.map((stat) => (
-        <JoueurCard stat={stat} key={stat.classement} />
+        <motion.div key={stat.classement} variants={itemVariants}>
+          <JoueurCard stat={stat} />
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }
