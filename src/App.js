@@ -1,5 +1,6 @@
 import Lenis from "@studio-freight/lenis";
 import "./reset.scss";
+import JoueurCard from "./components/joueur-card/JoueurCard";
 
 function App() {
   const lenis = new Lenis();
@@ -11,76 +12,27 @@ function App() {
 
   requestAnimationFrame(raf);
 
-  return (
-    <div className="App">
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        Page 1
-      </div>
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        Page 2
-      </div>
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        Page 3
-      </div>
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        Page 4
-      </div>
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        Page 5
-      </div>
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        Page 6
-      </div>
-    </div>
-  );
+  const stats = [
+    {
+      classement: 1,
+      joueur: {
+        nom: "Stephen",
+        prenom: "Curry",
+        photo: "./curry.jpg",
+      },
+      equipe: "GSW",
+      match: "12",
+      matchJoues: "12",
+      pointParMatch: "45.2",
+      rebondParMatch: "3.4",
+      passeDecisiveParMatch: "12.3",
+      minuteParMatch: "35.2",
+      troisPointMoyenne: "68",
+      lancerFrancMoyenne: "80",
+    },
+  ];
+
+  return <JoueurCard stat={stats[0]} />;
 }
 
 export default App;
