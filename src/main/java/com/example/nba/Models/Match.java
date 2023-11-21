@@ -24,30 +24,21 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Match {
+
     @jakarta.persistence.Id
-    @SequenceGenerator(
-        name = "match_sequence",
-        sequenceName = "match_sequence",
-        allocationSize = 1
-    )
-    @GeneratedValue(
-        strategy = GenerationType.SEQUENCE,
-        generator = "match_sequence"
-    )
+    @SequenceGenerator(name = "match_sequence", sequenceName = "match_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "match_sequence")
     @Column(name = "id", updatable = false)
     Long id;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "id_equipe_domicile" ,unique = false)
+    @JoinColumn(name = "id_equipe_domicile", unique = false)
     Equipe equipeDomicile;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "id_equipe_exterieur" ,unique = false)
+    @JoinColumn(name = "id_equipe_exterieur", unique = false)
     Equipe equipeExterieur;
-    
 
-    
-    
 }

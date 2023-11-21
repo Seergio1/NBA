@@ -17,7 +17,11 @@ public class JoueurController {
     JoueurService joueurService;
 
     @GetMapping(path = "/allJoueur")
-    public List<Joueur> getAllJoueur(){
-        return joueurService.getAllJoueur();
+    public List<Joueur> getAllJoueur() {
+        List<Joueur> joueurs = joueurService.getAllJoueur();
+        for (Joueur joueur : joueurs) {
+            joueur.setStats();
+        }
+        return joueurs;
     }
 }
