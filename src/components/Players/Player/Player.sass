@@ -1,0 +1,64 @@
+.player_
+    display: flex
+    flex-direction: column
+    width: 80%
+    box-shadow: 0 0 0.1rem 0.1rem #c0bebe7b
+    padding: 1.5rem 1rem 0.2rem 1rem
+    margin: 0 auto 1.5rem auto
+    .player_pic
+        width: 100%
+        height: 7.2rem
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 1rem
+        img
+            width: 100%
+            height: 100%
+            object-fit: contain
+    .name
+        text-align: center
+        font-size: 1.2rem
+        font-weight: bolder
+        font-family: "Sora_SM"
+    .stat
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: flex-start
+        margin-top: 0.7rem
+        height: 5rem
+        transition: all 0.2s ease-in-out
+        overflow: hidden
+        .row
+            display: flex
+            flex-wrap: nowrap
+            width: 100%
+            height: 5rem
+            justify-content: space-evenly
+            .block_details
+                width: 6rem
+                height: 5rem
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                .label
+                    font-weight: bolder
+                    color: #0939a2
+                    font-size: 0.84rem
+                .value
+                    font-size: 1.1rem
+                    color: #414147
+                    font-weight: bolder
+    .show
+        height: 10rem
+    .hidden
+        display: flex
+        justify-content: center
+        transition: all 0.2s ease-in-out
+        align-items: center
+        transform-origin: center
+        margin-bottom: 0.4rem
+    .reverse
+        transform: rotate(180deg)

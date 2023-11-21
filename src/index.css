@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Poppins_L";
+  src: url(./assets/fonts/Poppins-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins_B";
+  src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Sora_R";
+  src: url(./assets/fonts/Sora-Regular.ttf);
+}
+@font-face {
+  font-family: "Sora_L";
+  src: url(./assets/fonts/Sora-Light.ttf);
+}
+@font-face {
+  font-family: "Sora_SM";
+  src: url(./assets/fonts/Sora-SemiBold.ttf);
+}
+
+body {
+  background: #ffff;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Poppins_L";
+  color: #1c1c1c;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+:root {
+  --primary: #01579b;
+  --primary-hovered: #034272;
+  --secondary: #d30529;
+  --secondary-hovered: #b10320;
+  /* ///// */
+}
