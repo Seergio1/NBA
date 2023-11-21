@@ -1,0 +1,15 @@
+.joueur-list {
+  width: 100vw;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  .title {
+    width: 100%;
+    margin-bottom: 40px;
+    font-family: Designer;
+    text-transform: uppercase;
+    font-size: 42px;
+  }
+}
