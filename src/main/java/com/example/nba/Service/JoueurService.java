@@ -13,7 +13,17 @@ public class JoueurService {
     @Autowired
     JoueurRepo joueurRepo;
 
-    public List<Joueur> getAllJoueur(){
+    public List<Joueur> getAllJoueur() {
         return joueurRepo.findAll();
     }
+
+    public List<Joueur> getJoueurByIdEquipe(long id_equipe) {
+        List<Joueur> joueur = joueurRepo.getJoueurById(id_equipe);
+        // List<Joueur_stat_match> stats = new Vector<Joueur_stat_match>();
+        // for (int index = 0; index < joueur.size(); index++) {
+
+        // }
+        return null;
+    }
+
 }
