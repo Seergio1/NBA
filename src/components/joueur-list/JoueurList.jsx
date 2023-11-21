@@ -65,8 +65,8 @@ export default function JoueurList({ stats }) {
       <div className="title">
         <TextWrapper text="Classement individuel des meilleurs joueurs" />
       </div>
-      {stats.map((stat) => (
-        <motion.div key={stat.classement} variants={itemVariants}>
+      {stats.map((stat, index) => (
+        <motion.div key={index} variants={itemVariants}>
           <JoueurCard stat={stat} />
         </motion.div>
       ))}
