@@ -17,7 +17,7 @@ public class PointsController {
   @Autowired
   PointsService pointsService;
 
-  @PostMapping(path = "/points/save", produces = "application/json")
+  @PostMapping(path = "/points/save", produces = "application/json",consumes = "application/json")
   public Points save(@RequestBody Points points) {
     return this.getPointsService().save(points);
   }

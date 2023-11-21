@@ -17,7 +17,7 @@ public class MatchEffectifController {
   @Autowired
   MatchEffectifService matchEffectifService;
 
-  @PostMapping(path = "/match-effect/save", produces = "application/json")
+  @PostMapping(path = "/match-effect/save",consumes = "application/json", produces = "application/json")
   public MatchEffectif save(@RequestBody MatchEffectif matchEffectif) {
     return this.getMatchEffectifService().save(matchEffectif);
   }
