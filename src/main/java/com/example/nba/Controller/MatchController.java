@@ -26,7 +26,7 @@ public class MatchController {
         return matchService.getAllMatch();
     }
 
-    @PostMapping(path = "/save")
+    @PostMapping(path = "/save",consumes = "application/json")
     public Match addNewMatch(@RequestBody Match match){
         return matchRepo.save(match);
     }

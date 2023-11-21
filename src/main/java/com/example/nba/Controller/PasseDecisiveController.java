@@ -17,7 +17,7 @@ public class PasseDecisiveController {
   @Autowired
   PasseDecisiveService passeDecisiveService;
 
-  @PostMapping(path = "/passe-decisive/save", produces = "application/json")
+  @PostMapping(path = "/passe-decisive/save", produces = "application/json",consumes = "application/json")
   public PasseDecisive save(@RequestBody PasseDecisive passeDecisive) {
     return this.getPasseDecisiveService().save(passeDecisive);
   }

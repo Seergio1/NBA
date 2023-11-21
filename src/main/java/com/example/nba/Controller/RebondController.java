@@ -17,7 +17,7 @@ public class RebondController {
   @Autowired
   RebondService rebondService;
 
-  @PostMapping(path = "/rebond/save", produces = "application/json")
+  @PostMapping(path = "/rebond/save", produces = "application/json",consumes = "application/json")
   public Rebond save(@RequestBody Rebond rebond) {
     return this.getRebondService().save(rebond);
   }
