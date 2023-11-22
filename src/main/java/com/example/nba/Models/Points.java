@@ -20,8 +20,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "points")
-@Table(name = "points")
+@Entity(name = "points_new")
+@Table(name = "points_new")
 @Builder
 @Data
 @NoArgsConstructor
@@ -29,15 +29,15 @@ import lombok.NoArgsConstructor;
 public class Points {
 
   @Id
-  @SequenceGenerator(name = "points_sequence", sequenceName = "points_sequence", allocationSize = 1)
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "points_sequence")
+  @SequenceGenerator(name = "points_new_sequence", sequenceName = "points_new_sequence", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "points_new_sequence")
   @Column(name = "id", updatable = false)
   Long id;
 
   @ManyToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
   @JsonBackReference
-  @JoinColumn(name = "id_match", unique = false)
+  @JoinColumn(name = "id_match_effectif", unique = false)
   MatchEffectif matchEffectif;
 
   @Column(name = "minute", columnDefinition = "INTEGER")
