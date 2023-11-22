@@ -20,8 +20,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "passe_decisive")
-@Table(name = "passe_decisive")
+@Entity(name = "passe_decisive_new")
+@Table(name = "passe_decisive_new")
 @Builder
 @Data
 @NoArgsConstructor
@@ -29,14 +29,14 @@ import lombok.NoArgsConstructor;
 public class PasseDecisive {
 
   @Id
-  @SequenceGenerator(name = "passe_decisive_sequence", sequenceName = "passe_decisive_sequence", allocationSize = 1)
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "passe_decisive_sequence")
-  @Column(name = "id_passe_decisive", updatable = false)
+  @SequenceGenerator(name = "passe_decisive_new_sequence", sequenceName = "passe_decisive_new_sequence", allocationSize = 1)
+  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "passe_decisive_new_sequence")
+  @Column(name = "id", updatable = false)
   Long id;
 
   @ManyToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "id_match", unique = false)
+  @JoinColumn(name = "id_match_effectif", unique = false)
   @JsonBackReference
   MatchEffectif matchEffectif;
 
