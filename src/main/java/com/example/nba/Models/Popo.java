@@ -17,28 +17,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity(name = "match")
-@Table(name = "match")
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Match {
+public class Popo {
 
-    @jakarta.persistence.Id
-    @SequenceGenerator(name = "match_sequence", sequenceName = "match_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "match_sequence")
-    @Column(name = "id", updatable = false)
     Long id;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "id_equipe_domicile")
-    Equipe equipeDomicile;
+    @Column(name = "nom")
+    String nom;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "id_equipe_exterieur")
-    Equipe equipeExterieur;
+    @Column(name = "abreviation")
+    String abreviation;
 
+    @Column(name = "pathPhoto")
+    String pathPhoto;
+
+    
 }

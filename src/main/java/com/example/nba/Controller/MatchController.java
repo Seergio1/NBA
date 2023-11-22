@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.nba.Models.Equipe;
+import com.example.nba.Models.I_Match;
 import com.example.nba.Models.Match;
 import com.example.nba.Repository.MatchRepo;
 import com.example.nba.Service.MatchService;
@@ -18,16 +20,20 @@ import com.example.nba.Service.MatchService;
 public class MatchController {
     @Autowired
     MatchService matchService;
+
     @Autowired
     MatchRepo matchRepo;
 
     @GetMapping(path = "/allMatch")
-    public List<Match> getAllMatch(){
+    public List<Match> getAllMatch() {
         return matchService.getAllMatch();
     }
 
-    @PostMapping(path = "/save",consumes = "application/json")
-    public Match addNewMatch(@RequestBody Match match){
-        return matchRepo.save(match);
+    @PostMapping(path = "/save")
+    public Match save(@RequestBody I_Match i_Match) {
+
+        Match match = Match.builder().equipeDomicile(i_Match.toEquipe(i_Match.getEquipeDomicile()))
+                .equipeExterieur(i_Match.toEquipe(i_Match.getEquipeExterieur())).build();
+        return this.matchRepo.save(match);
     }
 }

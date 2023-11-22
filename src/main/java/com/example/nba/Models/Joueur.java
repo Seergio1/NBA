@@ -9,7 +9,6 @@ import org.hibernate.annotations.OnDeleteAction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -45,8 +44,9 @@ public class Joueur {
     @Column(name = "prenom")
     String prenom;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    @ManyToOne
+    // @ManyToOne(cascade = CascadeType.MERGE)
+    // @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonBackReference
     @JoinColumn(name = "id_equipe", unique = false)
     Equipe equipe;
